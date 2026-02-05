@@ -64,8 +64,8 @@ def validate_args(args):
         logger.error(f"Models extension must be .onnx: {args.model}")
         return False
     
-    if not args.provider in RegistryTypes.__members__.values():
-        logger.error(f"Invalid provider. Available providers: {RegistryTypes.__members__.values()}")
+    if not args.backend in RegistryTypes.__members__.values():
+        logger.error(f"Invalid backend. Available backends: {RegistryTypes.__members__.values()}")
         return False
 
     if args.port < 1 or args.port > 65535:
